@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fungsi</title>
+    <title>Fungsi Luas Persegi Panjang dan Lingkaran</title>
 </head>
 <body>
     <?php
@@ -18,19 +18,41 @@
     }
     ?>
 
+    <h2>Kalkulator Luas Persegi Panjang & ingkaran</h2>
+
     <form method="post">
-        Masukkan Panjang = <input type="text" name="panjang">
-        Masukkan Lebar = <input type="text" name="lebar">
-        <input type="submit" name="submit" value="Hitung">
+        <table>
+            <tr>
+                <td>Masukkan Panjang :</td>
+                <td><input type="text" name="panjang"></td>
+            </tr>
+            <tr>
+                <td>Masukkan Lebar :</td>
+                <td><input type="text" name="lebar"></td>
+            </tr>
+            <tr>
+                <td>Masukkan Jari-jari :</td>
+                <td><input type="text" name="jari_jari"></td>
+            </tr>
+        </table>
+        <br>
+        <input type="submit" name="submit" value="Cari Luas">
     </form>
 
     <?php
     if (isset($_POST['submit'])) {
-        $panjang = $_POST['panjang'];
-        $lebar = $_POST['lebar'];
-        echo "Luas Persegi Panjang = " . persegi_panjang($panjang, $lebar) . "<br>";
-        // echo "Luas Lingkaran = " . lingkaran($panjang / 2) . "<br>";
+        if (!empty($_POST['panjang']) && !empty($_POST['lebar'])) {
+            $panjang = $_POST['panjang'];
+            $lebar = $_POST['lebar'];
+            echo "Luas Persegi Panjang = " . persegi_panjang($panjang, $lebar) . "<br>";
+        }
+        if (!empty($_POST['jari_jari'])) {
+            $jari_jari = $_POST['jari_jari'];
+            echo "Luas Lingkaran = " . lingkaran($jari_jari) . "<br>";
+        }
     }
     ?>
+    <!-- //Fungsi adalah sebuah blok kode yang dapat digunakan kembali dan dapat dipanggil dari bagian lain program. -->
+
 </body>
 </html>

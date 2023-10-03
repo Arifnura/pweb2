@@ -16,22 +16,25 @@
         $y += 2;
     }
 
-    echo "</br>Perulangan DO bilangan prima dari kurang dari 20: </br>";
-    $i = 2;
+    echo "</br>Perulangan DO WHILE bilangan prima dari kurang dari 20: </br>";
+    //inisialisasi variabel $a
+    $a = 2; // Inisialisasi variabel $a dengan nilai awal 2
     do {
-        $prima = true;
-        for ($j = 2; $j < $i; $j++) {
-            if ($i % $j == 0) {
-                $prima = false;
-                break;
+        $prima = true; // Inisialisasi variabel $prima dengan nilai true, asumsi awal $a adalah bilangan prima
+        // Perulangan for untuk memeriksa apakah $a adalah bilangan prima
+        for ($b = 2; $b < $a; $b++) {
+            // Jika $a habis dibagi oleh $b, maka $a bukan bilangan prima
+            if ($a % $b == 0) {
+                $prima = false; // Set $prima menjadi false karena $a bukan bilangan prima
+                break; // Keluar dari perulangan for karena sudah diketahui $a bukan prima
             }
         }
+        // Jika $prima masih true, maka $a adalah bilangan prima, maka tampilkan $a
         if ($prima) {
-            echo $i . " ";
+            echo $a . " ";
         }
-        $i++;
-    } while ($i < 20);
-    ?>
-
+        $a++; // Increment nilai $a untuk melanjutkan ke angka berikutnya
+    } while ($a < 20); // Perulangan akan terus berjalan sampai nilai $a kurang dari 20
+    ?>    
 </body>
 </html>
